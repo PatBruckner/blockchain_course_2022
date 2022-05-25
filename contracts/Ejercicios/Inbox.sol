@@ -4,19 +4,27 @@ pragma solidity ^0.8.0;
 contract Inbox {
 
     string public message;
-    address private ownerAdress;
+    address private ownerAddress;
 
     constructor(string memory initialMessage) {
-        ownerAdress = msg.sender;
+        ownerAddress = msg.sender;
         message = initialMessage;
     }
 
-    function getMessage() public view returns (string memory) {
+    function getMessage() public ownerRestricted(msg.sender) view returns (string memory) {
         return message;
     }
 
-    function setMessage(string memory newMessage) public {
-        require(msg.sender == ownerAdress, "Solo el owner puede modificar sus caracteristicas.");
+    function setMessage(string memory newMessage) public ownerRestricted(msg.sender) {
         message = newMessage;
+    }
+
+    function getOwner() public view returns (address) {
+        return ownerAddress;
+    }
+
+    modifier ownerRestricted(address client) {
+        require(client == ownerAddress, "Solo el owner puede modificar sus caracteristicas.");
+        _;
     }
 }

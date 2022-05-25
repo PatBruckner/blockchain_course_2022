@@ -31,6 +31,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "getOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "message",
 				"outputs": [
 					{
@@ -84,11 +97,11 @@
 	},
 	"sources": {
 		"contracts/Ejercicios/Inbox.sol": {
-			"keccak256": "0x86653055725bd50d959806102d643e0e3708bcc7624604443d2a842916e3d27a",
+			"keccak256": "0xec8ab6c6bd440857861e1a521d43682a643373bb5ae5eacfbf0c29f8dc2c7924",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://af5a0ba30ee395188254ec3b4f451bec08d4e2b98d6e382f03c4579875ea3524",
-				"dweb:/ipfs/QmNkBXYCwTPuxSZUCgVZNB7A5i6KsZ4VQquox4W1aWwGMu"
+				"bzz-raw://767364157430f548398c68fd0647c8573e0270f564f827381a306f3452933d5d",
+				"dweb:/ipfs/QmekGp3dnMSJN8pX6L6YBbuu99BXZKJgZx6sqNeX2SCM8h"
 			]
 		}
 	},
