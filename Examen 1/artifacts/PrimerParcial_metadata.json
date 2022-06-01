@@ -189,11 +189,11 @@
 	},
 	"sources": {
 		"Examen 1/PrimerParcial.sol": {
-			"keccak256": "0x3c861b895b3f90d06dc0bc8eae4a5b7245c17440e8fb4f7c9dcf7e202021d5d9",
+			"keccak256": "0x1ddec890fa843bd65481f737e34285e37b11fca631bd8bee84ff77f2851dfb5a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://253da0a480ed2b35cb541731557804e3a633632fcd2d6198968251d74c2bb4de",
-				"dweb:/ipfs/QmSWmSzjUBxTthuwbj1j1XyNjmtuwncdbid5PwrwXAAbC2"
+				"bzz-raw://2240f364a2ae0768dd4c5544ebc09a355621b457f754e5c72f550fdc6fb40505",
+				"dweb:/ipfs/QmX8QXaDkvDU4Bab9UTubueGRAuLfvdbmHD1fzh7ax2b8M"
 			]
 		}
 	},

@@ -41,7 +41,9 @@ contract PrimerParcial {
         listProducts[productData.id].stock -= quantity;
         emit clientBuy(productData.name , msg.sender, quantity);
         if(quantity > 10) {
-            payable(msg.sender).transfer(productData.price);
+            payable(msg.sender).transfer(productData.price *quantity-1);
+        }else{
+            payable(msg.sender).transfer(productData.price *quantity);
         }
     }
 
