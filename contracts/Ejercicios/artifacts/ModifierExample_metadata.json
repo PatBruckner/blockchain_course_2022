@@ -83,6 +83,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "receiveMoney",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -117,6 +124,19 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawMoney",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -147,11 +167,11 @@
 	},
 	"sources": {
 		"contracts/Ejercicios/Mymodifier.sol": {
-			"keccak256": "0xc2f6ef60e7034cb5bf6f09998d4e3b4eeed6733c986ba4206a68d163ce684039",
+			"keccak256": "0x567b2a12f039291adcfe73c8bf4a9d7dc06e891a36f9a2cb18cbe4c0cbdf751e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://78059a1e03aedc8eaafe1074ba1f90faf94294b8ea8ced4bafc20859d5acf755",
-				"dweb:/ipfs/QmPh1mkSVZ9m39VS829KdmbAL9b8xEENgTAJzq9TYyKVmG"
+				"bzz-raw://37060cfc29e1d9325fb05ea0dbec1aab66a5138373acd47ed1daea6439b874eb",
+				"dweb:/ipfs/QmbHRdq9H3xheqWVehxjNLPPjrN345Ny6B8WQssY7HhTQs"
 			]
 		}
 	},
