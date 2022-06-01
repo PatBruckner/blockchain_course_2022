@@ -35,12 +35,58 @@
 			},
 			{
 				"inputs": [],
+				"name": "book2",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "author",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "available",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getTitle",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTitleAndIdBook2",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -82,11 +128,11 @@
 	},
 	"sources": {
 		"contracts/Ejercicios/StructTest.sol": {
-			"keccak256": "0x394fc7a9b3daedc8a27cad9fd2f4b7be81e10537e9571976fe09f1a360cb4e9a",
+			"keccak256": "0xb5001eb9a19a9272d6a68c7652f7353e330eef6fb7fa374510d8021bbf8909c2",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c1152b66d34ac69744b72a744f0445208bedd6e5e1ea95bf16ed1075cbfa1b2f",
-				"dweb:/ipfs/QmTMHEf9PYPDBYTJnDqY8nY9TwYXFGDTgp84yRwBiRpsX4"
+				"bzz-raw://0879b5e01d96e2bfca248a4ba64e851a2151bca9d2be066eb3b03f6d0d369b8c",
+				"dweb:/ipfs/QmRYVQhaGW3Ku9SYY1RTC8fBtJWXHpFmQ9LGtmJTNrsJjo"
 			]
 		}
 	},
