@@ -6,6 +6,46 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "author",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "available",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "quantity",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct StructTest.Book",
+						"name": "newBook",
+						"type": "tuple"
+					}
+				],
+				"name": "addBook",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "book1",
 				"outputs": [
@@ -28,6 +68,11 @@
 						"internalType": "bool",
 						"name": "available",
 						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantity",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -55,6 +100,43 @@
 					{
 						"internalType": "bool",
 						"name": "available",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantity",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "idBook",
+						"type": "uint256"
+					}
+				],
+				"name": "borrowBook",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "idBook",
+						"type": "uint256"
+					}
+				],
+				"name": "getBook",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
 						"type": "bool"
 					}
 				],
@@ -128,11 +210,11 @@
 	},
 	"sources": {
 		"contracts/Ejercicios/StructTest.sol": {
-			"keccak256": "0xb5001eb9a19a9272d6a68c7652f7353e330eef6fb7fa374510d8021bbf8909c2",
+			"keccak256": "0x93826d85560e828fd9f052b2f09170ce66e07d9b6606f54b6e188f804b6f47b1",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0879b5e01d96e2bfca248a4ba64e851a2151bca9d2be066eb3b03f6d0d369b8c",
-				"dweb:/ipfs/QmRYVQhaGW3Ku9SYY1RTC8fBtJWXHpFmQ9LGtmJTNrsJjo"
+				"bzz-raw://e6ebed6d7cbae01e377af7b0488dcce512def88b9c513be845bc882bab45c52d",
+				"dweb:/ipfs/QmY93dqQXa1G4svfabr4vNyDmREAtrt4YwVYuVzb7FvkWT"
 			]
 		}
 	},
