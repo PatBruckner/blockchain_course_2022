@@ -6,6 +6,19 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -167,11 +180,11 @@
 	},
 	"sources": {
 		"contracts/Ejercicios/Mymodifier.sol": {
-			"keccak256": "0x567b2a12f039291adcfe73c8bf4a9d7dc06e891a36f9a2cb18cbe4c0cbdf751e",
+			"keccak256": "0xdf4018cc8eb0fc3665de23ab9d904ca7380a68c6593ce804f06ca5b1325920f8",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://37060cfc29e1d9325fb05ea0dbec1aab66a5138373acd47ed1daea6439b874eb",
-				"dweb:/ipfs/QmbHRdq9H3xheqWVehxjNLPPjrN345Ny6B8WQssY7HhTQs"
+				"bzz-raw://28f6875599da20d47cc3c85103660a0809963aec24d40f8421d9109e7901285c",
+				"dweb:/ipfs/QmfNoNnJNwQRuj7YtAhxCC5ti6k7CwAv82jPBArimcFw7Y"
 			]
 		}
 	},

@@ -14,9 +14,17 @@ contract ModifierExample {
     }
 
     function withdrawMoney(uint amount) public {
+        uint amountToEther = amount * (10 ** 18);
+        require (amountToEther <= myAddresses[msg.sender], "Not enough money");
         myAddresses[msg.sender] -= amount * (10**18);
         address myWallet = msg.sender;
         payable(myWallet).transfer(amount * (10**18));
+
+        //  if (amountToEther <= myAddresses[msg.sender]) {
+        //      myAddresses[msg.sender] -= amount * (10**18);
+        //      address myWallet = msg.sender;
+        //      payable(myWallet).transfer(amount * (10**18));
+        //  }
     }
 
     function setValue(uint index, bool value) public {
@@ -25,5 +33,9 @@ contract ModifierExample {
 
     function setMyAddresses(address wallet, uint amount) public {
         myAddresses[wallet] = amount;
+    }
+
+    function getBalance() public view returns(uint) {
+        return address(this).balance;
     }
 }
