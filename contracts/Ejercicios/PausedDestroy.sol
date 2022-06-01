@@ -18,8 +18,8 @@ contract PausedDestroy {
     }
 
     function withdrawAllMoney(address payable to) public {
-        require(owner == msg.sender, "No es el duenho");
-        require(!paused, "Contract is pasued");
+        require(owner == msg.sender, "No es el dueno");
+        require(!paused, "Contract is paused");
         to.transfer(address(this).balance);
     }
 
