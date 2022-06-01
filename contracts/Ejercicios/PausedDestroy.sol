@@ -14,18 +14,19 @@ contract PausedDestroy {
     }
 
     function setPaused(bool value) public {
+        require(owner == msg.sender, "No es el duenho");
         paused = value;
     }
 
     function withdrawAllMoney(address payable to) public {
-        require(owner == msg.sender, "No es el dueno");
-        require(!paused, "Contract is paused");
+        require(owner == msg.sender, "No es el duenho");
+        require(!paused, "Contract is pasued");
         to.transfer(address(this).balance);
     }
 
     function destroyContract(address payable to) public {
-        //require(owner == msg.sender, "No es el duenho");
-        //require(!paused, "Contract is pasued");
+        require(owner == msg.sender, "No es el duenho");
+        require(!paused, "Contract is pasued");
         selfdestruct(to);
     }
 }

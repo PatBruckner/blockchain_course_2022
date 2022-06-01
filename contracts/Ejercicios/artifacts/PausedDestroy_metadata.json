@@ -98,11 +98,11 @@
 	},
 	"sources": {
 		"contracts/Ejercicios/PausedDestroy.sol": {
-			"keccak256": "0x50c39b5fd89814838b9b5d969349bab1537ed131488a962b1b7d85a3f40e4a15",
+			"keccak256": "0x75c5287341e04b82276147d84ffea2811105ebbf4e4ddfb8e2e3789fa86fd79b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5eb63424fb57ecfa3aa78dd154158afe69009c7dee99d1ed6fd56e5b9cb12863",
-				"dweb:/ipfs/QmPyoWUjtfw2SsL3nLMjMakPoMW6F6T1aq82zWVmH1XPVx"
+				"bzz-raw://24d6d02c788b845b2e3030be0eb71ad2d0169bd9d5f800e2b497dbc8a04b006d",
+				"dweb:/ipfs/QmU22iKf4Dq7DdUJGBxsDrCxv2DYBaxb3xSFLDHHD4bfny"
 			]
 		}
 	},
