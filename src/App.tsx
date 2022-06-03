@@ -10,7 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-       <p>Hello React, Truffle, Firebase</p>
+       <p> Hello React, Truffle, Firebase </p>
       </header>
     </div>
   );
