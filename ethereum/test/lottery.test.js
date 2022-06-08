@@ -18,14 +18,24 @@ contract("Lottery",accounts=>{
 
     it("Allows multiple accounts to enter lottery", async()=>{
 
-        await instance.enter({from:accounts[0], value: web3.utils.toWei("1","ether")});
-        await instance.enter({from:accounts[1], value: web3.utils.toWei("1","ether")});
-        await instance.enter({from:accounts[2], value: web3.utils.toWei("1","ether")});
+        await instance.enter({from:accounts[0], value: web3.utils.toWei("3","ether")});
+        await instance.enter({from:accounts[1], value: web3.utils.toWei("3","ether")});
+        await instance.enter({from:accounts[2], value: web3.utils.toWei("3","ether")});
         const players = await instance.getPlayers.call();
 
         assert.equal(accounts[0],players[0]);
         assert.equal(accounts[1],players[1]);
         assert.equal(accounts[2],players[2]);
+    })
+
+    it("Requires a min amount of ether", async()=>{
+
+        try {
+            await instance.enter({from: accounts[1], value: 0});
+        }catch (e) {
+            console.log('Error',e);
+            assert.equal("Necesitas minimo 2.1 Eth para entrar",e.reason)
+        }
     })
 
 })
