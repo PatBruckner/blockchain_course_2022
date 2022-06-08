@@ -32,10 +32,20 @@ contract("Lottery",accounts=>{
 
         try {
             await instance.enter({from: accounts[1], value: 0});
+            assert(false);
         }catch (e) {
-            console.log('Error',e);
             assert.equal("Necesitas minimo 2.1 Eth para entrar",e.reason)
         }
+    })
+
+    it("Only manager can picka  winner", async()=>{
+        try {
+            await instance.pickWinner({from: accounts[8]})
+            assert(false);
+        }catch (e) {
+            assert.equal("No eres el owner",e.reason)
+        }
+
     })
 
 })

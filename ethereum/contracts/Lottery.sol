@@ -25,7 +25,7 @@ contract Lottery{
         players= new address[](0);
     }
     modifier restricted(){
-        require(msg.sender == manager);
+        require(msg.sender == manager,"No eres el owner");
         _;
     }
 
