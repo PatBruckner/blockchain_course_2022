@@ -48,4 +48,17 @@ contract("Lottery",accounts=>{
 
     })
 
+    it("Send money to winnner then reset lottery game", async()=>{
+        const initialBalancePlayer= web3.eth.getBalance(accounts[1]);
+        await instance.enter({from:accounts[1], value: web3.utils.toWei("3","ether")});
+        const initialBalanceContract= web3.eth.getBalance(instance.address);
+        await instance.pickWinner({from: accounts[0]})
+
+        const finalBalancePlayer=web3.eth.getBalance(accounts[1]);
+        const finalBalanceContract=web3.eth.getBalance(instance.address);
+        const difference = finalBalancePlayer- initialBalanceContract;
+        assert(difference > web3.utils.toWei("2.5","ether"));
+
+    })
+
 })
