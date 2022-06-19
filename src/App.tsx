@@ -80,6 +80,8 @@ function App() {
         loadPlayers();
     }
 
+
+
     const onPickWinner = async () => {
         // @ts-ignore
         const Web3 = window.web3;
