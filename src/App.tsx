@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {connectWallet, initialize} from "./ethereum/web3";
 import contractLottery from "./ethereum/abis/Lottery.json";
-
+import * as net from "net";
 
 function App() {
 
@@ -20,9 +20,9 @@ function App() {
         // @ts-ignore
         if(window.web3) {
             initialize()
+            loadBlockchainData()
         }
     }, [])
-
 
     const loadBlockchainData = async () => {
 
@@ -51,25 +51,74 @@ function App() {
 
             setContract(contractDeployed)
         }
+
     }
 
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <p>
-                        Edit <code>src/App.tsx</code> and save to reload.
-                    </p>
-                    <p> Hello React, Truffle, Firebase </p>
-                    <button onClick={() => connectWallet()}>Connect</button>
+    const loadBalance = async () => {
+        // @ts-ignore
+        const Web3 = window.web3;
+        const balance = await Web3.eth.getBalance(contract.options.address)
+        setBalance(balance)
+    }
 
-                    <p>PLAYERS: {players.length}</p>
-                    <p>BALANCE: {balance}</p>
-                    <p>MANAGER: {manager}</p>
+    const loadPlayers = async () => {
+        const players = await contract.methods.getPlayers().call();
+        setPlayers(players);
+    }
 
-                </header>
-            </div>
-        );
+    const onEnter = async () => {
+        // @ts-ignore
+        const Web3 = window.web3;
+        const accounts = await Web3.eth.getAccounts()
+        setMessage("waiting on transaction success...")
+        await contract.methods.enter().send({
+            from: accounts[0],
+            value: Web3.utils.toWei(value, "ether")
+        })
+        setMessage("you have been entered...")
+        loadBalance();
+        loadPlayers();
+    }
+
+    const onPickWinner = async () => {
+        // @ts-ignore
+        const Web3 = window.web3;
+        const accounts = await Web3.eth.getAccounts()
+        setMessage("waiting on transaction success...")
+
+        await contract.methods.pickWinner().send({
+            from: accounts[0]
+        })
+
+        setMessage("A winner has been picked!")
+        loadBalance();
+        loadPlayers();
+    }
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                    Edit <code>src/App.tsx</code> and save to reload.
+                </p>
+                <p>Hi React, Truffle, Firebase</p>
+                <button onClick={() => connectWallet()} className="btn btn-success">Connect</button>
+
+                <button onClick={ () => onPickWinner() } className="btn btn-success">Pick Winner</button>
+
+                <p>PLAYERS: {players.length}</p>
+                <p>BALANCE: {balance}</p>
+                <p>MANAGER: {manager}</p>
+
+                <p>Monto minimo mayor a 2 ETH</p>
+                <input type="text" value={value} onChange={ (event) => { setValue(event.target.value) } }/>
+                <button onClick={ () => { onEnter() } } className="btn btn-warning">Enter</button>
+                <p>{message}</p>
+
+            </header>
+        </div>
+    );
 
 }
 export default App;
