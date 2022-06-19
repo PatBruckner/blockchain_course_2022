@@ -1,9 +1,8 @@
-import React, {useEffect,useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {connectWallet, initialize} from "./ethereum/web3";
-import contractLottery from "./ethereum/abis/Lottery.json";
-import * as net from "net";
+import contractLottery from "./ethereum/abis/Lottery.json"
 
 function App() {
 
@@ -46,6 +45,7 @@ function App() {
             setPlayers(players);
             const manager = await contractDeployed.methods.manager().call();
             setManager(manager)
+            console.log('manager: ', manager);
             const balance = await Web3.eth.getBalance(contractDeployed.options.address)
             setBalance(balance)
 
@@ -79,8 +79,6 @@ function App() {
         loadBalance();
         loadPlayers();
     }
-
-
 
     const onPickWinner = async () => {
         // @ts-ignore
@@ -121,6 +119,6 @@ function App() {
             </header>
         </div>
     );
-
 }
+
 export default App;
