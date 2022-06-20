@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.0;
+pragma solidity  ^0.8.0;
 
 contract Lottery {
+
     address[] public players;
     address public manager;
 
-    constructor() {
+    constructor(){
         manager = msg.sender;
     }
 
@@ -18,18 +19,21 @@ contract Lottery {
         return uint(keccak256(abi.encodePacked(block.difficulty, block.timestamp, players)));
     }
 
-    function pickWinner() public restricted() {
+    function pickWinner() public restricted {
+        //return random() % players.length;
+
         uint index = random() % players.length;
         payable(players[index]).transfer(address(this).balance);
         players = new address[](0);
-    }
-
-    function getPlayers() public view returns(address[] memory) {
-        return players;
     }
 
     modifier restricted() {
         require(msg.sender == manager, "you are not the manager.");
         _;
     }
+
+    function getPlayers() public view returns (address[] memory){
+        return players;
+    }
+
 }
