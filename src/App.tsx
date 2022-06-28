@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {connectWallet, initialize} from "./ethereum/web3";
-import contractLottery from "./ethereum/abis/Lottery.json"
-
+//import contractLottery from "./ethereum/abis/Lottery.json"
+import contractLottery from "./ethereum-hardhat/artifacts/src/ethereum-hardhat/contracts/Lottery.sol/Lottery.json"
 function App() {
 
     const [contract, setContract] = useState<any>('');
@@ -32,25 +32,25 @@ function App() {
 
         // Rinkeby 4, Ganache 5777, BSC 97
         // @ts-ignore
-        const networkData = contractLottery.networks['5777'];
+        const networkData = contractLottery.networks['4'];
         console.log('networkData:', networkData);
 
-        if(networkData) {
-            const abi = contractLottery.abi;
-            const address = networkData.address;
-            console.log('address: ', address);
-            const contractDeployed = new Web3.eth.Contract(abi, address);
+        //if(networkData) {
+        const abi = contractLottery.abi;
+        //const address = networkData.address;
+        //console.log('address: ', address);
+        //const contractDeployed = new Web3.eth.Contract(abi, address);
+        const contractDeployed = new Web3.eth.Contract(abi, '0x78a159E7B2D05C85F64aF14DA10299Ca0C4B755F');
 
-            const players = await contractDeployed.methods.getPlayers().call();
-            setPlayers(players);
-            const manager = await contractDeployed.methods.manager().call();
-            setManager(manager)
-            console.log('manager: ', manager);
-            const balance = await Web3.eth.getBalance(contractDeployed.options.address)
-            setBalance(balance)
+        const players = await contractDeployed.methods.getPlayers().call();
+        setPlayers(players);
+        const manager = await contractDeployed.methods.manager().call();
+        setManager(manager)
+        const balance = await Web3.eth.getBalance(contractDeployed.options.address)
+        setBalance(balance)
 
-            setContract(contractDeployed)
-        }
+        setContract(contractDeployed)
+        //}
 
     }
 
