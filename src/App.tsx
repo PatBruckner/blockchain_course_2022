@@ -11,6 +11,9 @@ function App() {
   const [players, setPlayers] = useState<any>([]);
   const [balance, setBalance] = useState<any>('');
 
+  const [value, setValue] = useState<any>('');
+  const [message, setMessage] = useState<any>('');
+
   console.log(contract);
 
   useEffect(() => {
@@ -40,12 +43,52 @@ function App() {
       const manager = await contractDeployed.methods.manager().call();
       setManager(manager);
       
-      const balance = await Web3.eth.getBalance(contractDeployed.options.address);
+      const balance = await Web3.eth.getBalance(contractDeployed.options.address)
       setBalance(balance);
       
       setContract(contractDeployed);
-      const aux = new Web3.eth.Contract(abi, address);
     }
+  }
+
+  const loadBalance = async () => {
+    // @ts-ignore
+    const Web3 = window.web3;
+    const balance = await Web3.eth.getBalance(contract.options.address)
+    setBalance(balance)
+  }
+
+  const loadPlayers = async () => {
+    const players = await contract.methods.getPlayers().call();
+    setPlayers(players);
+  }
+
+  const onEnter = async () => {
+    // @ts-ignore
+    const Web3 = window.web3;
+    const accounts = await Web3.eth.getAccounts()
+    setMessage("waiting on transaction success...")
+    await contract.methods.enter().send({
+      from: accounts[0],
+      value: Web3.utils.toWei(value, "ether")
+    })
+    setMessage("you have been entered...")
+    loadBalance();
+    loadPlayers();
+  }
+
+  const onPickWinner = async () => {
+    // @ts-ignore
+    const Web3 = window.web3;
+    const accounts = await Web3.eth.getAccounts()
+    setMessage("waiting on transaction success...")
+
+    await contract.methods.pickWinner().send({
+      from: accounts[0]
+    })
+
+    setMessage("A winner has been picked!")
+    loadBalance();
+    loadPlayers();
   }
 
   return (
@@ -63,13 +106,19 @@ function App() {
         >
           Hi React, Truffle and Firebase
         </a>
-        <button onClick={() => connectWallet()}>Connect</button>
+        <button onClick={() => connectWallet()} className="btn btn-success">Connect</button>
+        <button onClick={ () => onPickWinner() } className="btn btn-success">Pick Winner</button>
         <p>Players: {players.length}</p>
         <p>Balance: {balance}</p>
         <p>Manager: {manager}</p>
+
+        <p>Monto minimo mayor a 2 ETH</p>
+        <input type="text" value={value} onChange={ (event) => { setValue(event.target.value) } }/>
+        <button onClick={ () => { onEnter() } } className="btn btn-warning">Enter</button>
+        <p>{message}</p>
       </header>
     </div>
   );
 }
 
-export default App;
+export default App

@@ -46,6 +46,19 @@ module.exports = {
       port: 7545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
      },
+     rinkeby: {
+      provider: () => new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/51c30f21c6db40b4bbc1eb97b10fcdb8'),
+      network_id: "4",
+      gas: 8500000,           // Gas sent with each transaction (default: ~6700000)
+      gasPrice: 20000000000  // 20 gwei (in wei) (default: 100 gwei)
+    },
+    bscTestnet: {
+      provider: () => new HDWalletProvider(mnemonic, 'https://data-seed-prebsc-1-s1.binance.org:8545'),
+      network_id: 97,
+      confirmations: 10,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    }
     //
     // An additional network, but with some advanced options…
     // advanced: {
