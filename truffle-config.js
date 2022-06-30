@@ -19,7 +19,7 @@
  */
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const mnemonic='slot bright dismiss total zero summer clip illness suggest another peasant escape'
+const mnemonic='hammer okay weird toddler raven notable control armor jewel upon skull office'
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -48,7 +48,7 @@ module.exports = {
       network_id: "*",       // Any network (default: none)
      },
     rinkeby: {
-      provider: () => new HDWalletProvider(mnemonic,'https://rinkeby.infura.io/v3/6628cf27863f4d64a8d39dd64d9f2711'),
+      provider: () => new HDWalletProvider(mnemonic,'https://rinkeby.infura.io/v3/51c30f21c6db40b4bbc1eb97b10fcdb8'),
       network_id: "4",
     },
     //

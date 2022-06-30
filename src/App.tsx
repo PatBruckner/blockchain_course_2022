@@ -30,7 +30,7 @@ function App() {
         // @ts-ignore
         const Web3 = window.web3;
         const abi = contractLottery.abi;
-        const contractDeployed = new Web3.eth.Contract(abi, '0x582c5592e44775209ad4529479c0e0e66c576e2b');
+        const contractDeployed = new Web3.eth.Contract(abi, '0x7998EC5496B98D6De3792d98214AC9a50858fe3d');
         setContract(contractDeployed);
 
 
@@ -97,7 +97,23 @@ function App() {
 
     return (
         <div className="App">
+             <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+        Welcome to Orb coin
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+         
+
+        </a>
+        
             <button onClick={() => connectWallet()} className="btn btn-success">Connect</button>
+            ************************************************
             <div>
                 <h1>Comprar tokens</h1>
                 <label>
@@ -105,12 +121,14 @@ function App() {
                     <input id='addressField' type="text" value={address} onChange={ (event) => { setAddress(event.target.value) } } />
                 </label>
             </div>
+           
             <div>
                 <label>
                     Cantidad de tokens a comprar (1 token = 1 ether)
                     <input id='quantityField' type="number" value={quantity} onChange={ (event) => { setQuantity(event.target.value) } } />
                 </label>
             </div>
+           
             <div>
                 <label>
                     Value input
@@ -118,32 +136,38 @@ function App() {
                 </label>
             </div>
             <button onClick={() => buy()} className="btn btn-success">Comprar tokens</button>
-
+            ************************************************
             <div>
                 <h1>Get User Balance</h1>
                 <label>
                     Dirección del usuario
                     <input id='addressField' type="text" value={address} onChange={ (event) => { setAddress(event.target.value) } } />
                 </label>
-                <button onClick={() => getUserBalance()} className="btn btn-success">Get Balance</button>
+                <button onClick={() => getUserBalance()} className="btn btn-success">User Balance</button>
                 <p>User BALANCE: {userBalance}</p>
             </div>
-            <button onClick={getBalance}>Contract Balance</button>
+            ************************************************
+            <button onClick={getBalance} className="btn btn-success">Contract Balance</button>
             <p>CONTRACT BALANCE: {balance}</p>
-            <p>CONTRACT Address: {contractAddress}</p>
-
+            ************************************************
+            <p>CONTRACT Address on RINKEBY: {contractAddress}</p>
+            ************************************************
             <div>
                 <h1>Añadir nuevos tokens</h1>
                 <input id='addressField' type="number" value={quantity} onChange={ (event) => { setQuantity(event.target.value) } } />
-                <button onClick={increment}>Add tokens</button>
+                <button onClick={increment} className="btn btn-success">Add tokens</button>
             </div>
+           
             <p>TOKEN BALANCE: {tokens}</p>
+            ************************************************
             <div>
                 <h1>Token Price</h1>
                 <input id='addressField' type="number" value={quantity} onChange={ (event) => { setQuantity(event.target.value) } } />
-                <button onClick={getTokenPrice}>Get Price</button>
+                <button onClick={getTokenPrice} className="btn btn-success">Get Price</button>
                 <p>Token price: {tokenprice}</p>
             </div>
+            ************************************************
+        </header>
         </div>
 
     );
