@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\Paolo\\Desktop\\Proyecto_react\\my-coin\\src\\ethereum-hardhat\\contracts\\ERC20.sol": {
-      "lastModificationDate": 1656539087674,
-      "contentHash": "25f787cea72d3f1a60525f2a0f78601d",
+      "lastModificationDate": 1656555259210,
+      "contentHash": "83830028c88797f022390cd5fc67fc8f",
       "sourceName": "src/ethereum-hardhat/contracts/ERC20.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -40,8 +40,8 @@
       ]
     },
     "C:\\Users\\Paolo\\Desktop\\Proyecto_react\\my-coin\\src\\ethereum-hardhat\\contracts\\IERC20.sol": {
-      "lastModificationDate": 1656539087710,
-      "contentHash": "15e52e5568fe80b0cd62810b94bb1aac",
+      "lastModificationDate": 1656555259210,
+      "contentHash": "5372d5bf504132e29023689225362de9",
       "sourceName": "src/ethereum-hardhat/contracts/IERC20.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -75,8 +75,8 @@
       ]
     },
     "C:\\Users\\Paolo\\Desktop\\Proyecto_react\\my-coin\\src\\ethereum-hardhat\\contracts\\IERC20Metadata.sol": {
-      "lastModificationDate": 1656539087723,
-      "contentHash": "5f4e93594cfd4321fadbfac3aad28bf9",
+      "lastModificationDate": 1656555259211,
+      "contentHash": "74cfe96190093fa7c3a35057a9bd09ad",
       "sourceName": "src/ethereum-hardhat/contracts/IERC20Metadata.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -110,8 +110,8 @@
       ]
     },
     "C:\\Users\\Paolo\\Desktop\\Proyecto_react\\my-coin\\src\\ethereum-hardhat\\contracts\\Main.sol": {
-      "lastModificationDate": 1656539087733,
-      "contentHash": "526a9c6afb0098e67adfca06f0096f0c",
+      "lastModificationDate": 1656558528052,
+      "contentHash": "f10ba4292b7099a654f3c630e0f3a601",
       "sourceName": "src/ethereum-hardhat/contracts/Main.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -147,8 +147,8 @@
       ]
     },
     "C:\\Users\\Paolo\\Desktop\\Proyecto_react\\my-coin\\src\\ethereum-hardhat\\contracts\\ERC20OpenZepellin.sol": {
-      "lastModificationDate": 1656539087699,
-      "contentHash": "6b7d622778d9c8b6738c83ca6c72f199",
+      "lastModificationDate": 1656555259210,
+      "contentHash": "ddd5c3ac8cea3a7ae1f8d8016a3c5c3f",
       "sourceName": "src/ethereum-hardhat/contracts/ERC20OpenZepellin.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -330,8 +330,8 @@
       ]
     },
     "C:\\Users\\Paolo\\Desktop\\Proyecto_react\\my-coin\\src\\ethereum-hardhat\\contracts\\Migrations.sol": {
-      "lastModificationDate": 1656539087744,
-      "contentHash": "47a753dfca92085cbfa6cccaf133eb97",
+      "lastModificationDate": 1656555259212,
+      "contentHash": "7e7c8521178863108d7c36605031a3ff",
       "sourceName": "src/ethereum-hardhat/contracts/Migrations.sol",
       "solcConfig": {
         "version": "0.8.4",
